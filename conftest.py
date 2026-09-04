@@ -9,7 +9,8 @@ from pages.login_page import LoginPage
 def logged_in_page():
 
     with sync_playwright() as p:
-        browser = p.chromium.launch(headless=False, args=["--start-maximized"], slow_mo=500)
+        # browser = p.chromium.launch(headless=False, args=["--start-maximized"], slow_mo=500)
+        browser = p.chromium.launch(headless=True)
         context = browser.new_context(viewport=None)
         page = context.new_page()
         logger.info("Browser Launched")
@@ -27,7 +28,8 @@ def logged_in_page():
 def page():
 
     with sync_playwright() as p:
-        browser = p.chromium.launch(headless=False, args=["--start-maximized"], slow_mo=500)
+        # browser = p.chromium.launch(headless=False, args=["--start-maximized"], slow_mo=500)
+        browser = p.chromium.launch(headless=True)
         context = browser.new_context(viewport=None)
         page = context.new_page()
         logger.info("Browser Launched")
